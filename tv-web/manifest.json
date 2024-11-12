@@ -1,0 +1,76 @@
+{
+    "manifest_version": 2,
+    "name": "utao",
+    "version": "1.0.3",
+    "description": "utao tv",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "utao@163.com"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.ixigua.com/aboutus/*"],
+        "js": ["js/zepto.min.js","js/base.js","js/xigua/load_home.js"]
+      },
+      {
+        "matches": ["https://www.ixigua.com/*"],
+        "js": ["js/zepto.min.js","js/base.js","js/xigua/load_detail.js"]
+      },
+      {
+        "matches": ["https://v.qq.com/x/cover/*"],
+        "js": ["js/zepto.min.js","js/base.js","js/qq/load_detail_qq.js"]
+      },
+      {
+        "matches": ["https://www.iqiyi.com/*.html*"],
+        "js": ["js/zepto.min.js","js/base.js","js/iqiyi/load_detail.js"]
+      },
+      {
+        "matches": ["https://v.youku.com/v_show/*.html*"],
+        "js": ["js/zepto.min.js","js/base.js","js/youku/load_detail.js"]
+      },
+      {
+        "matches": ["https://www.mgtv.com/b/*/*.html*"],
+        "js": ["js/zepto.min.js","js/base.js","js/mgtv/load_detail.js"],
+        "run_at": "document_end"
+      },
+      {
+        "matches": ["https://www.bilibili.com/bangumi/play/*"],
+        "js": ["js/zepto.min.js","js/base.js","js/bili/load_detail.js"],
+         "run_at": "document_end"
+      },
+      {
+        "matches": ["https://www.yangshipin.cn/tv/home*"],
+        "js": ["js/zepto.min.js","js/base.js","js/cctv/load_tv.js"]
+      },
+      {
+        "matches": ["https://tv.cctv.com/*"],
+        "js": ["js/zepto.min.js","js/base.js","js/cctvideo/load_detail.js"]
+      },
+      {
+        "matches": ["<all_urls>"],
+        "css": ["css/begin.css"],
+        "run_at": "document_start"
+      }
+    ],
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "storage",
+      "<all_urls>",
+      "nativeMessaging",
+      "nativeMessagingFromContent",
+      "geckoViewAddons"
+    ],
+    "background": {
+      "scripts": ["js/background.js"]
+    },
+   "web_accessible_resources": [
+        "css/*",
+        "js/*",
+       "iconfont/iconfont.woff2",
+       "index.html",
+       "cctv.html"
+   ]
+  }

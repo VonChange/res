@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:@vue>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>油桃TV</title>
+    <link href="css/my.css?v=1731399663559" rel="stylesheet">
+    <script src="js/zepto.min.js?v=1731399663559"></script>
+    <script src="js/base.js?v=1731399663559"></script>
+    <script src="js/common.js?v=1731399663559"></script>
+    <script src="js/vuex.min.js"></script>
+    <script src="js/focus-home.js?v=1731399663559"></script>
+    <script src="js/index.js?v=1731399663559"></script>
+</head>
+
+<body>
+    <div class="tv-body">
+        <div class="tv-body" style="height: 100%" id="tv-body" @vue:mounted="initData()">
+            <div class="tv-header">
+                <div tabindex="0"  @focus="switchChannel(channels[0])"  @click="switchChannel(channels[0])" class="tv-btn"
+                     id="tv-see">&#xe604; 必看</div>
+                <div tabindex="0"  @focus="switchChannel(channels[1])"  @click="switchChannel(channels[1])" class="tv-btn"
+                     id="tv-index" move-down="#tv-index-content:.tv-item">&#xe604; 首页</div>
+                <div tabindex="0"  @focus="switchChannel(channels[2])"  @click="switchChannel(channels[2])" class="tv-btn"
+                     id="tv-history" move-down="#tv-history-content:.tv-btn"> &#xe63c; 历史</div>
+                <div tabindex="0"  @focus="switchChannel(channels[3])"  @click="switchChannel(channels[3])" class="tv-btn"
+                     id="tv-search" move-down="#tv-3-content:.tv-btn">&#xe610; 搜索</div>
+            </div>
+            <div id="tv-content">
+                <div id="tv-index-content" class="tv-content" :style="{display:(tab == 'index' ? 'grid' : 'none')}">
+                    <div   v-for="item in apps" @click="appChoose(item)" :id="tvId(item.id,'app-')" class="tv-item" move-updown="5" move-up="#tv-index">
+                        <img :src="item.pic" :alt="item.name" /><span>{{item.name}}</span>
+                    </div>
+                </div>
+                <div id="tv-history-content" class="tv-tab tv-tab-grid tv-grid-4" :style="{display:(tab == 'history' ? 'grid' : 'none')}">
+                    <div v-for="item in historys"  @click="historyChoose(item)"
+                         class="tv-btn  tab-grid-item" style="white-space:normal;" move-updown="4" move-up="#tv-history">{{item.name}} {{item.remark}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
