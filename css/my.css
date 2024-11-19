@@ -23,27 +23,27 @@ html,body{
   height: 100%
 }
 .tv-notify{
-  width: 100%;
+  width: 100vw;
   background-color: green;
   position:absolute; 
   top:0; 
   text-align: center;
   animation: fadeInDown 0.5s forwards;
   animation-fill-mode: both;
-  height: 5vw;
-  padding: 1vw 0;
-  font-size: 3vw;
+  height: 10vh;
+  padding: 2vh 0;
+  font-size: 6vh;
     color: white;
 }
 .tv-wait{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position:fixed;
     top: 0;
     left:0;
     background-color:rgba(0,0,0, .5); pointer-events:auto;
     text-align: center;
-    font-size: 2vw;
+    font-size: 8vh;
     line-height: 100vh;
 }
 @font-face {
@@ -119,19 +119,19 @@ html,body{
   justify-content: space-around
 }
 .tv-btn{
-   font-size: 2vw;
+   font-size: 5vh;
    margin:1vw 1vw;
-   padding: 0.5vw 2vw;
+   padding: 0.5vh 2vw;
+    line-height: 6vh;
    border-radius: 2vw;
    align-content: center;
-    line-height: 3vw;
     vertical-align: middle;
    /* width: fit-content;*/
     white-space: normal;
     text-align: center;
     color: black;
     cursor: pointer;
-  word-spacing: normal;
+    word-spacing: normal;
     max-width: 15vw;
     background-color: #5ca9e8;
  /* background-color: #5ca9e8;*/
