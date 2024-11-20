@@ -1,5 +1,6 @@
 v: 2024/11/19/001
-url: https://api.utao.tv/proxy/raw/res/refs/heads/master/update.json
+url: https://ghp.ci/github.com/VonChange/res/archive/refs/heads/master.zip
+skipFirst: true
 data:
   - code: video
     url: https://api.utao.tv/proxy/raw/res/refs/heads/master/data/video.json
